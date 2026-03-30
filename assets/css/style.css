@@ -1,0 +1,200 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --lilac-bg: #fdfaf6; 
+    --lilac-paper: #ffffff;
+    --lilac-text: #6b527b;
+    --lilac-accent: #c091ad; 
+    --lilac-dark: #47324b;
+}
+
+body, html {
+    width: 100%;
+    font-family: 'Cormorant Garamond', serif;
+    background: linear-gradient(135deg, #fceceb 0%, #e8d5ec 100%);
+    color: var(--lilac-dark);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+#peace-particles-container {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- CABEÇALHO --- */
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.pre-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.2rem;
+    color: var(--lilac-dark);
+    margin-bottom: 15px;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    color: var(--lilac-dark);
+    margin-bottom: 20px;
+}
+
+.main-title span {
+    font-family: 'Dancing Script', cursive;
+    color: var(--lilac-accent);
+    font-size: 4.8rem;
+    display: block;
+    margin-top: 5px;
+}
+
+.hero-text {
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--lilac-text);
+    max-width: 600px;
+}
+
+.scroll-down {
+    margin-top: 60px;
+    font-size: 1.2rem;
+    color: var(--lilac-dark);
+    animation: float 3s infinite ease-in-out;
+    opacity: 0.7;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+/* --- SEÇÕES DE CARTA --- */
+.love-letter {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
+.paper {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(71, 50, 75, 0.08);
+    width: 100%;
+    max-width: 650px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    transition: transform 0.3s ease;
+}
+
+h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.8rem;
+    color: var(--lilac-accent);
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--lilac-accent);
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.paper p {
+    font-size: 1.35rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.paper strong, .paper em {
+    color: var(--lilac-accent);
+    font-weight: 600;
+}
+
+.highlight-paper {
+    background: #ffffff;
+    border: 2px solid var(--lilac-accent);
+    box-shadow: 0 15px 40px rgba(192, 145, 173, 0.2);
+}
+
+.final-paper { text-align: center; }
+.final-paper p { text-align: center; }
+
+.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.2rem;
+    color: var(--lilac-dark);
+    margin-top: 40px;
+    line-height: 1.3;
+    text-align: center;
+}
+
+/* --- CARROSSEL --- */
+.gallery-paper { text-align: center; }
+.gallery-paper p { text-align: center; }
+
+.polaroid-swiper {
+    width: 100%;
+    height: 550px; 
+    margin-top: 40px;
+    border-radius: 10px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 6px solid var(--lilac-paper);
+    box-shadow: 0 5px 15px rgba(71, 50, 75, 0.15);
+}
+
+.swiper-pagination-bullet-active { background: var(--lilac-accent) !important; }
+
+/* --- MOBILE FIT --- */
+@media (max-width: 768px) {
+    .wrapper { padding: 15px; }
+    .hero { padding: 40px 10px; }
+    .main-title { font-size: 2.5rem; }
+    .main-title span { font-size: 3.5rem; }
+    .love-letter { margin-bottom: 60px; }
+    .paper { padding: 30px 20px; border-radius: 15px; }
+    h3 { font-size: 2.2rem; }
+    .paper p { font-size: 1.15rem; text-align: left; }
+    .polaroid-swiper { height: 60vh; max-height: 450px; margin-top: 30px; }
+    .swiper-slide img { border: 4px solid var(--lilac-paper); }
+}
